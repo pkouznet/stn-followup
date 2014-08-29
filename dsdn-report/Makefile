@@ -1,4 +1,4 @@
-OUT = cpc
+OUT = dsdn-report
 IN = bib
 all: $(OUT).pdf
 

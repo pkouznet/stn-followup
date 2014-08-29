@@ -1,0 +1,12 @@
+\def\noopsort#1{} \def\No{\kern-.25em\lower.2ex\hbox{\char'27}}
+  \def\no#1{\relax} \def\http#1{{\\{\small\tt
+  http://www-litp.ibp.fr:80/{$\sim$}#1}}}
+\begin{thebibliography}{1}
+
+\bibitem{sdn-survey}
+D.~Kreutz, F.~M.~V. Ramos, P.~Veríssimo, C.~E. Rothenberg, S.~Azodolmolky, and
+  S.~Uhlig.
+\newblock Software-defined networking: A comprehensive survey.
+\newblock 2014.
+
+\end{thebibliography}
