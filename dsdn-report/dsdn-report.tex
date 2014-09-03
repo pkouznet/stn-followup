@@ -254,61 +254,105 @@ Petr Kuznetsov$^{1}$ \quad Stefan Schmid$^{2}$\\
 
 
 \begin{abstract}
-
 The first workshop on Distributed Software-Defined Networking took
 place in Paris, France, on the 15th of July, just before 
 the 33rd ACM Symposium on Principles of Distributed Computing. 
 The workshop intended to be a forum to discuss new algorithmic and
 distributed computing challenges offered by the emerging field of
-Software Defined Networking (SDN). SDN abstracts the cumbersome task 
-of computer network management to a distinct control plane with a
-standard programming interface. 
-In th worshop, we invited invited researchers in the fields of
-distributed computing and
-networking in order to understand whether distributed implementations of the
-SDN control 
-plane give rise to new and interesting research questions, where the
-PODC community may use its expertise.
+Software Defined Networking (SDN).
+For the workshop, we invited invited researchers in the fields of
+distributed computing and networking in order to understand whether distributed implementations of the
+SDN control plane give rise to new and interesting research questions,
+in solving which  the expertise of the PODC community may be of use.
 \end{abstract}
 
 
 \section{Distributed SDNs: New? Interesting?}
 
-The emerging paradigm of Software-Defined Networking (SDN) promises to
-simplify network management and enable building networks
-that meet specific, end-to-end requirements.
-%SDN centralizes on
-In SDN, the \emph{control plane}  (a collection of network-attached servers)
-maintains control over the so-called \emph{data plane} (the
-packet-forwarding functionality implemented on switching
-hardware). Control applications operate on a global, logically-centralized network view,
-which introduces opportunities for network-wide management and optimization.
-This view enables simplified programming models to define a high-level
-network policy that the data plane must respect.
+Computer networking currently goes through a phase transition, and the paradigm of Software-Defined Networking (SDN)
+is discussed intensively, both in the industry and in the academia. In
+a nutshell, SDN out-sources the control over the network 
+to a logically centralized software, called the \emph{control plane}. 
+The ability of the control plane to ``program'' the network (the
+\emph{data plane}) opens new interesting opportunities.
 
-There is no doubt that implementing a ``logically centralized'' SDN
-control on a single centralized controller is an overkill in terms of
-availability, responsiveness and throughput.      
-As a recent survey on advances in SDN
-research~\cite{sdn-survey} puts it:  ``As
-the initial concerns with SDN scalability were addressed ...
-– in particular the myth that logical centralization implied
-a physically centralized controller, ... SDN ideas have matured and evolved from
-an academic exercise to a commercial success.'' 
+ While the perspective of a centralized controller simplifies network management,
+it comes with the usual drawbacks: single-point of failure,
+scalability bottleneck, overhead due to indirection, etc. 
+This raises the questions: Do we need a \emph{distributed} control plane for SDN? And if so,
+what could the ``PODC community'' contribute?
 
-But does the perspective of distributed SDN evoke new and interesting
-research questions for the distributed computing community? Or the SDN
-arhitects can simply resort to existing solutions designed for other
-types of systems?
+In order to discuss these questions, we organized the workshop on Distributed
+Software-Defined Networks (DSDN). The workshop took
+place in Paris on the sunny day of July 15th, just before
+PODC, concurrently with four other PODC workshops, and gathered the
+audience of about 20-40 people (which could be considered as success). 
 
-In the first edition of the workshop devoted to \emph{distributed}
-aspects of software-defined networking (affiliated with
-PODC 2014), we tried to address this question. 
+The program consisted of invited and peer-reviewed presentations from researchers working in applied networking,
+systems, and theory of distributed computing.
+
 
 \section{Program}
 
+Below we give a short overview of the talks given in our
+workshop. Abstracts and slides can be found at \url{http://www.podc.org/podc2014/dsdn14/}. 
+
+\subsection{Foundations of SDN}
+
+In the opening keynote, Nate Foster (Cornell) gave an overview of
+programming abstractions for SDN. The talk consisted of three parts. 
+
+... 
+
+
+\subsection{Consistent Range Classification with OpenFlow} 
+
+Yehuda Afek (TAU) presented his recent work with Anat Bremler-Barr and
+Liron Schiff on  
+
+\subsection{Software Transactional Networking: A Robust and
+  Distributed SDN Control Plane}
+
+Marco Canini (UCL) presented the concept of software transactional
+networking (STN), a control-plane abstraction used for consistent
+composition of concurrent policies. The abstraction assumes a set of
+control applications that concurrently apply modifications (or
+updates) of the
+\emph{network policy}, i.e., the set of rules that stipulate how the
+traffic should be processed at the data plane.     
+Given that the policy updates coming from different control applications may
+conflict with each other, the STN framework offers to the applications
+a \emph{transactional} interface with \emph{all-or-nothing} semantics.    
+
+
+
+
+
+
 
 \section{Summary}
+
+A recently published detailed survey on the work that has been in
+SDN-related research so far~\cite{sdn-survey} 
+claims that ``the myth that logical centralization implied
+a physically centralized controller'' has been addressed and, as a
+result, ``SDN ideas have matured and evolved from
+an academic exercise to a commercial success''. 
+Interestingly, among 407 articles cited in the survey, we do not find
+a single paper that appeared in a distributed-computing theory venue
+(such as PODC or DISC).
+We think, based on our personal research experience, this is not
+because SDN does not give rise new and interesting
+research questions related to distributed computing. 
+Maybe it is just lack of curiosity or insights on recent
+advances in networking?  
+ 
+The workshop shows that the situation is slowly changing: a few
+research groups are looking at the distributed aspects of SDN now.    
+It seems, however, that progress here is still rather modest and
+typically boils down to solving ``conventional'' algorithmic problems
+where SDN is used as a motivating application. We believe nevertheless that
+there are deeper distributed challenges in coming directly from SDN.  
 
 
 \bibliographystyle{abbrv}
