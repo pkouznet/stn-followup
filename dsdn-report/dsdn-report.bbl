@@ -6,21 +6,23 @@
 \bibitem{AfekBS14}
 Y.~Afek, A.~{Bremler-Barr}, and L.~Schiff.
 \newblock Cross-entrance consistent range classifier with openflow.
-\newblock In {\em Open Networking Summit 2014 - Research Track, {ONS} 2014,
-  Santa Clara, CA, USA, March 2-4, 2014}, 2014.
+\newblock In {\em ONS}, 2014.
 
 \bibitem{stn}
 M.~Canini, P.~Kuznetsov, D.~Levin, and S.~Schmid.
 \newblock Software transactional networking: concurrent and consistent policy
   composition.
-\newblock In {\em Proceedings of the Second {ACM} {SIGCOMM} Workshop on Hot
-  Topics in Software Defined Networking, HotSDN 2013, The Chinese University of
-  Hong Kong, Hong Kong, China, Friday, August 16, 2013}, pages 1--6, 2013.
+\newblock In {\em HotSDN}, pages 1--6, 2013.
+
+\bibitem{tr-stn}
+M.~Canini, P.~Kuznetsov, D.~Levin, and S.~Schmid.
+\newblock A distributed sdn control plane for consistent policy updates.
+\newblock Technical report, arXiv TR 1305.7429, 2014.
 
 \bibitem{sdn-survey}
 D.~Kreutz, F.~M.~V. Ramos, P.~Veríssimo, C.~E. Rothenberg, S.~Azodolmolky, and
   S.~Uhlig.
 \newblock Software-defined networking: A comprehensive survey.
-\newblock 2014.
+\newblock Technical report, arXiv TR 1406.0440, 2014.
 
 \end{thebibliography}
