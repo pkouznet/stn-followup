@@ -267,7 +267,7 @@ in solving which  the expertise of the PODC community may be of use.
 \end{abstract}
 
 
-\section{Distributed SDNs: New? Interesting?}
+\section{SDN and PODC?}
 
 Computer networking currently goes through a phase transition, and the paradigm of Software-Defined Networking (SDN)
 is discussed intensively, both in the industry and in the academia. In
@@ -308,29 +308,69 @@ programming abstractions for SDN. The talk consisted of three parts.
 \subsection{Consistent Range Classification with OpenFlow} 
 
 Yehuda Afek (TAU) presented his recent work with Anat Bremler-Barr and
-Liron Schiff on  
+Liron Schiff~\cite{AfekBS14}.   
+
+...
+
+\subsection{SDN-Based Private Interconnection}
+
+...
 
 \subsection{Software Transactional Networking: A Robust and
   Distributed SDN Control Plane}
 
 Marco Canini (UCL) presented the concept of software transactional
 networking (STN), a control-plane abstraction used for consistent
-composition of concurrent policies. The abstraction assumes a set of
+composition of concurrent policies~\cite{stn}. The abstraction assumes a set of
 control applications that concurrently apply modifications (or
 updates) of the
 \emph{network policy}, i.e., the set of rules that stipulate how the
 traffic should be processed at the data plane.     
 Given that the policy updates coming from different control applications may
 conflict with each other, the STN framework offers to the applications
-a \emph{transactional} interface with \emph{all-or-nothing} semantics.    
+a \emph{transactional} interface with \emph{all-or-nothing} semantics.   
+The talk hinted on the formal definition of the abstraction of consistent policy
+composition (CPC), and sketched designs of its resilient implementations.  
+ 
+\subsection{Declarative, Distributed Configuration}
+
+Can the challenges motivating the use of SDN be addressed using
+existing hardware and protocols. Sanjai Narain (Applied Communication Sciences) summarized the
+experience collected at his company in using the Assured and Dynamic
+Configuration(ADC) system. In their approach, network functionality is
+expressed as a set of constraints on configuration variables. SAT or
+SMT solvers are used to convert these constraints into values of configuration variables.
+Of course, in specific scenarios, proprietary solutions may be more
+efficient and  easier to deploy than generic ones (e.g., based on the
+SDN framework), and Sanjai's talk questioned the very
+motivation behind migrating to SDN. 
+
+\subsection{Managing the Network with Merlin}
+
+...
+
+\subsection{Managing Dynamic Networks: Distributed or Centralized
+  Control}
+
+In his somewhat provocative talk, Roger Wattenhofer (ETHZ) considers
+the following question. If we take the extreme case of a network 
+managed (e.g., using the SDN approach) by a (fault-tolerant,
+performant, etc.) central controller, would this imply
+that distributed algorithms are no longer needed. The answer (not very
+surprisingly) is no: we still have to deal with the problem of
+dynamicity and failures on the data plane, as well as the fact that
+the data plane is inherently geographically distributed and cannot be
+manipulated in the atomic manner. In short, we still have to deal with
+\emph{consistency} of network control, and here we can benefit from
+distributed computing which is essentially all about consistency. 
+In his talk, Roger overviewed several natural network consistency
+criteria (such as \emph{loop-freedom} or \emph{per-packet
+  consistency}) and sketched several impossibility results and
+complexity bounds of achieving these criteria in a few different
+network models.   
 
 
-
-
-
-
-
-\section{Summary}
+\section{Distributed SDN: New? Interesting?}
 
 A recently published detailed survey on the work that has been in
 SDN-related research so far~\cite{sdn-survey} 
@@ -350,9 +390,9 @@ advances in networking?
 The workshop shows that the situation is slowly changing: a few
 research groups are looking at the distributed aspects of SDN now.    
 It seems, however, that progress here is still rather modest and
-typically boils down to solving ``conventional'' algorithmic problems
-where SDN is used as a motivating application. We believe nevertheless that
-there are deeper distributed challenges in coming directly from SDN.  
+typically boils down to solving ``conventional'' algorithmic problems, 
+using SDN only as a motivating application. We believe nevertheless that
+there are deeper distributed challenges coming directly from SDN.  
 
 
 \bibliographystyle{abbrv}
