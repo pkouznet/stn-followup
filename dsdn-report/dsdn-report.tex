@@ -270,18 +270,22 @@ in solving which  the expertise of the PODC community may be of use.
 
 \section{SDN and PODC?}
 
-Computer networking currently goes through a phase transition, and the paradigm of Software-Defined Networking (SDN)
+Computer networking currently goes through a transition phase:
+the paradigm of Software-Defined Networking (SDN)
 is discussed intensively, both in the industry and in the academia. In
 a nutshell, SDN out-sources the control over the network 
 to a logically centralized software, called the \emph{control plane}. 
 The ability of the control plane to ``program'' the network (the
-\emph{data plane}) opens new interesting opportunities.
+\emph{data plane}) opens new interesting opportunities to network
+operators and system designers.
 
  While the perspective of a centralized controller simplifies network management,
-it comes with the usual drawbacks: single-point of failure,
+it comes with the usual drawbacks: single point of failure,
 scalability bottleneck, overhead due to indirection, etc. 
-This raises the questions: Do we need a \emph{distributed} control plane for SDN? And if so,
-what could the ``PODC community'' contribute?
+This raises the questions: What kind of a \emph{distributed} control
+plane for SDN is needed? 
+And if so, does it bring new and interesting questions the ``PODC
+community'' can address?
 
 In order to discuss these questions, we organized the workshop on Distributed
 Software-Defined Networks (DSDN). The workshop took
@@ -329,7 +333,11 @@ updates) of the
 traffic should be processed at the data plane.     
 Given that the policy updates coming from different control applications may
 conflict with each other, the STN framework offers to the applications
-a \emph{transactional} interface with \emph{all-or-nothing} semantics.   
+a \emph{transactional} interface with \emph{all-or-nothing} semantics.
+The appealing difference with classical transactional systems is that
+here we have to make sure that some kinds of transactions, namely
+\emph{data-plane traffic} traces have to be processed in a manner that
+is transparent to network-configuration changes.    
 The talk hinted on the formal definition of the abstraction of consistent policy
 composition (CPC), and sketched designs of its resilient implementations.  
  
@@ -373,14 +381,19 @@ network models.
 
 \section{Distributed SDN: New? Interesting?}
 
-A recently published detailed survey on the work that has been in
+A recently published detailed survey on the 
 SDN-related research so far~\cite{sdn-survey} 
 claims that ``the myth that logical centralization implied
 a physically centralized controller'' has been addressed and, as a
 result, ``SDN ideas have matured and evolved from
 an academic exercise to a commercial success''. 
-Interestingly, among 407 articles cited in the survey, we do not find
-a single paper that appeared in a distributed-computing theory venue
+
+Given that dealing with networking and computing aspects in the
+same SDN system appears to be novel~\cite{roger-hotnets,stn-tr,stn} and
+the apparent indispensability of \emph{distributed} control in SDN,
+one may expect that this emerging area would bring new and interesting theory.   
+However, among 407 articles cited in~\cite{sdn-survey}, we do not find
+a single paper that appeared in a \emph{theoretical} distributed-computing venue
 (such as PODC or DISC).
 We think, based on our personal research experience, this is not
 because SDN does not give rise new and interesting
