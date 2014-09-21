@@ -213,7 +213,7 @@
 
 %\title{A Distributed SDN Control Plane for Concurrent Policy Updates}
 
-\title{Distributed Software-Defined Networking:\\ ACM PODC 2014 Workshop }
+\title{Distributed Software-Defined Networking:\\ The ACM PODC 2014 Workshop \textbf{DSDN}}
 
 
 
@@ -255,190 +255,93 @@ Petr Kuznetsov$^{1}$ \quad Stefan Schmid$^{2}$\\
 
 
 \begin{abstract}
-The first workshop on Distributed Software-Defined Networking took
+The workshop on Distributed Software-Defined Networking, DSDN, took
 place in Paris, France, on the 15th of July, just before
 the 33rd ACM Symposium on Principles of Distributed Computing.
 The workshop intended to be a forum to discuss new algorithmic and
 distributed computing challenges offered by the emerging field of
 Software Defined Networking (SDN).
-For the workshop, we invited invited researchers in the fields of
-distributed computing and networking in order to understand whether distributed implementations of the
-SDN control plane give rise to new and interesting research questions,
-in solving which  the expertise of the PODC community may be of use.
+The workshop consisted of invited as well as peer-reviewed presentations, both
+from researchers in the field of
+distributed computing and in the field of networking. 
 \end{abstract}
 
 
-\section{SDN and PODC?}
+\section{SDN: Networking Is Cool Again!}
 
-Computer networking currently goes through a transition phase:
-the paradigm of Software-Defined Networking (SDN)
+Computer networking currently goes through a transition phase,
+and the paradigm of Software-Defined Networking (SDN) 
 is discussed intensively, both in the industry and in the academia. In
-a nutshell, SDN out-sources the control over the network
-to a logically centralized software, called the \emph{control plane}.
-The ability of the control plane to ``program'' the network (the
-\emph{data plane}) opens new interesting opportunities to network
-operators and system designers.
+a nutshell, the paradigm out-sources and consolidates the control over a network
+to a logically centralized \emph{software control plane}.
+This separation, and the introduction of ``programmability'',
+allows to adapt and innovate the network control plane more quickly
+and independently of the data plane.
+The resulting flexibilities open interesting new opportunities:
+networking is considered cool again.
 
- While the perspective of a centralized controller simplifies network management,
-it comes with the usual drawbacks: single point of failure,
-scalability bottleneck, overhead due to indirection, etc.
-This raises the questions: What kind of a \emph{distributed} control
-plane for SDN is needed?
-And if so, does it bring new and interesting questions the ``PODC
-community'' can address?
+\section{SDN meets PODC}
 
-In order to discuss these questions, we organized the workshop on Distributed
-Software-Defined Networks (DSDN). The workshop took
+At the heart of SDN lies the idea to design and operate 
+the network control logic 
+on a centralized network view.
+However, inevitably, this view is only \emph{logically centralized}~\cite{onix}: 
+in order to avoid a single point of failure and ensure scalability and efficiency,  
+the control plane state must
+be physically distributed. 
+
+The design of a distributed control plane is only one example where we feel that the
+PODC community could contribute to relevant networking problems today.
+Accordingly, the goal of the DSDN workshop was to bring together networking researchers with the PODC
+community, to discuss current trends in networking, and to identify interesting articulation
+points between the two communities.
+
+The workshop took
 place in Paris on the sunny day of July 15th, just before
-PODC, concurrently with four other PODC workshops, and gathered the
-audience of about 20-40 people (which could be considered as success).
-
-The program consisted of invited and peer-reviewed presentations from researchers working in applied networking,
-systems, and theory of distributed computing.
-
+PODC, concurrently with four other PODC workshops.
 
 \section{Program}
 
-Below we give a short overview of the talks given in our
+Below we give a short summary of the talks given in our
 workshop. Abstracts and slides can be found at \url{http://www.podc.org/podc2014/dsdn14/}.
+%Unfortunately, one of the speakers could not present his
+%work due to visa issues.
 
 \subsection{Foundations of SDN}
 
+The opening keynote was given by Prof Nate Foster (\emph{Cornell University}),
+one of the leading figures in SDN and whose research
+is situated at the intersection of programming languages, networks, and security. 
 
+Nate Foster gave an overview of the motivation for and foundations of SDN, and
+emphasized the importance that programming languages and formal methods 
+play in software-defined networks: Only by a careful engineering of the right programming abstractions,
+an effective reasoning about network behavior becomes possible. The ability to
+formally reason about an SDN system is important, especially in the light
+of today trend towards public cloud computing, where a network misconfiguration may
+leak confidential information to other tenants.
 
-In the opening keynote, Nate Foster (Cornell) gave an overview of
-programming abstractions for SDN. The talk consisted of three parts.
-
-...
-
-one of the leading figures in formal methods for networks, and the man behind the pyretic / frenetic project.
-
-talk title: sdn foundations
-
-Ongoing Work
-Proof-Carrying Code
-• Tenants generate proofs of important
-network properties
-• Administrators verify proofs from untrusted
-tenants using simple checkers
-Probabilistic Programming
-• Encode randomized routing schemes
-• Establish fault/congestion bounds
-Deeper Foundations
-• Understand SDN in terms of classic concepts
-like {safe, regular, atomic} registers
-• Develop analogs of non-blocking algorithms
-
-…due to the proliferation of devices, protocols, languages
-
-emphasized a formal and rigorous / correctness approach:
-Networks are critical for ensuring the security of many
-systems… so it is important they function as expected
-
-Programming languages and formal methods have a key role
-to play in software-defined networks
-• By carefully engineering the right programming abstractions,
-effective reasoning about network behavior becomes possible
-- Featherweight OpenFlow
-- NetKAT
-- Consistent updates
-
-Reasoning techniques! Enabling use of reasoning
-techniques typically
-associated with the
-programming languages and
-verification communities
-
-Machine Model [PLDI ‘13]
-Language Model [POPL’12, NSDI ’13, POPL ’14]
-Run-Time Model [SIGCOMM ’12, SYNT ‘13]
-
-Distributed Programming: Even updating a single
-switch is challenging:
-• Flow tables are huge
-• OpenFlow only
-provides instructions
-for adding and
-removing single entries
-•Must update tables
-while they are live and
-processing packets
-
-42 pages...
-...of informal prose
-...and C struct definitions
-
-Parameterized Weak Bisimulation
-Invariants
-• Safety: at all times, the rules installed on switches are a
-subset of the controller function
-• Liveness: the controller eventually processes all packets
-diverted to it by switches
-Theorem
-!
-
-OpenFlow is a machine language!
-Network-Wide Programming
-What features should an SDN language provide?
-
-Network Updates: Challenges
-•Network is a distributed system
-•Can only update one rule at a time
-Our Approach
-•Provide programmers with constructs
-for updating the entire network at once
-•Engineer semantics to guarantee
-“reasonable” behavior during transition
-•Run-time system:
--Constructs update protocols
--Applies optimizations automatically
-
-
+Nate Foster presented his vision of the Machine, Language, and Runtime Models for SDN.
+In particular, he described the design of a machine-verified SDN controller,
+which is based on a detailed operational OpenFlow model 
+and which is formalized in Coq.~\cite{machine-verified} 
+This operational OpenFlow model can also be used 
+to develop a verified compiler and run-time system
+for a more high-level network programming language such as NetKAT.~\cite{netkat} 
 
 
 \subsection{Consistent Range Classification with OpenFlow}
 
 Yehuda Afek (TAU) presented his recent work with Anat Bremler-Barr and
-Liron Schiff~\cite{AfekBS14}.
+Liron Schiff~\cite{AfekBS14} on consistently classifying ranges 
+in SDN networks with multiple entrance, i.e., in scenarios where the flow changes the entrance point
+to the network. 
+Their range classification scheme only requires three entries per range, 
+and supports atomic updates across multiple switches. This makes the scheme attractive,
+e.g., in load-balancing and NFV applications. 
 
+We discuss issues in the ranges based flow classification in a dynamic SDN based network. Such issues arise in load-balancing and security based applications in a multi entrance network, where flows may dynamically change their point of entrance. We present a new consistent flow management scheme in an Openflow based SDN network. that addresses these issues. Our first step is a new efficient mutli-range classification scheme which uses only 3 entries per range instead of w per range as in the best existing classifiers, where w is the field size in bits. Building on the ranges classification we show how to update ranges across multiple switches in an atomic manner – allowing to update the set of ranges and their associated actions while packets are classified and the network is changing. Finally, using the two schemes above, we present an architecture suitable for several applications such as load-balancing (which we describe in detail), and NFV, to manage multi-entrance consistency – ensuring that flows are handled by the same policy even when they change the entrance point to the network. Future extensions will be discussed. Joint work with Anat Bremler-Barr and Liron Schiff.
 
-Cross-Entrance Consistent Range Classifier with OpenFlow
-...
-
-In this paper we present a new Openflow based architecture to manage flows across a multi entrance SDN network
-in a consistent way, thus improving in several aspects on previous works [4, 5]. Our contributions are in three levels.
-At the first level we use OpenFlow features in a sophisticated way to implement a range classification scheme which
-to the best of our knowledge is more space efficient (only 3 entries per range) than previous known classifiers. In the
-second contribution we show how to update ranges across multiple switches in an atomic manner - allows to update
-the set of ranges and their associated actions while packets are classified and the network is changing. Finally, using
-the two schemes above, we present an architecture suitable for several applications such as load-balancing, and NFV,
-to manage multi-entrance consistency - keeping Per Flow consistency even when the flow changes the entrance point
-to our network.
-Our scheme utilizes advanced OpenFlow features to efficiently implement a complex computation of a nonoverlapping
-range classification scheme which requires only 3n+2w+1 table entries (a significant saving is observed
-already with 4 ranges - see Figure 1(b)), where n is the number of ranges and w is the size of values (e.g. 32 for IPv4
-addresses). The three key OpenFlow features (and limitations) that we use are: (i) a packet can be processed by several
-forwarding tables using ’goto’ action command to decide on the next table. (ii) a packet can be extended with an auxiliary
-field which may be altered (e.g., xored with a constant) and considered as the packet goes through subsequent
-flow tables. (iii) Openflow lack of support for general computation on packet field values.
-Three levels of atomicity are considered and supported by our scheme: (i) Per packet consistency - each packet is
-handled according to correct configuration either before or after the update. (ii) Per flow Consistency - all packets of a
-flow are handled according to the same configuration and new flows are handled according to the newest configuration.
-(iii) Cross-entrance consistency - keeping Per Flow consistency even when the flow changes the entrance point to our
-network.
-Our ranges classification is based on PIDR, a non-OpenFlow system design by Panigrahy and Sharma [3] which
-uses special hardware (e.g., ASIC or FPGA) and has no notion of atomicity. PIDR creates two patterns for each range
-called the ELCP0 and ELCP1 of the range (see definition in [3]) and save them separately in two TCAMs associated
-with range bounds. The two TCAMs are arranged in a very specific manner to support the scheme. In order to classify
-a value, it should be queried against the two TCAMs, returning two matches that are associated with two possible
-ranges. Then the value is checked whether it belongs to one of these two ranges
-
-We have designed atomic implementation of basic operations in the 3 consistency models, the operations are merge,
-split and range update. From these operations we are developing an efficient OpenFlow based load-balancer. We also
-found methods by which our design is improved in the future with the introduction of the following new OpenFlow
-models: DevoFlow [2], which allows us to save control plane traffic for Per-Flow consistency (a similar idea is suggested
-in [4]), and the model RMT (recongurable match tables) [1], can be used to replace the Compare table with a
-computation stage
 
 \subsection{SDN-Based Private Interconnection}
 
@@ -461,12 +364,13 @@ networks between the local datacenters that reside in the private cloud, to the 
 networks are called the hybrid cloud.
 In this work we present a private hybrid cloud in which all the information that pass across the cloud is information theoretic
 secured. I.e., unless there is a coalition of several routers in the cloud, the information cannot be revealed. This is done by using
-secret sharing scheme together with SDN to ensure privacy. Encryption with (n;k) secret sharing scheme (n  k) is done by
+secret sharing scheme together with SDN to ensure privacy. 
+%Encryption with (n;k) secret sharing scheme (n  k) is done by
 creating n shares from the data such that only by having at least k shares, the data can be decrypted. In the cloud notations,
 assume that the data has to be sent from the private datacenter. The source in the private datacenter creates n shares from the
 data and sends them to the destination at the public cloud through the hybrid cloud. The SDN controller manages the routes of
 these shares such that no router sees k or more shares. This way, we ensure that only the destination at the public cloud that gets
-all the shares, can decrypt the data, resulting in a private channel in the hybrid cloud. When n > k, we allow n..k shares to get
+%all the shares, can decrypt the data, resulting in a private channel in the hybrid cloud. When n > k, we allow n..k shares to get
 lost, due to congestion or even by malicious routers.
 Our Contribution. The contributions of our paper are as follows; To the best of our knowledge, we are the first to use secret
 sharing for a unicast communication over SDN architecture. We show that secret sharing can be very useful to achieve private
@@ -512,6 +416,10 @@ motivation behind migrating to SDN.
 
 \subsection{Managing the Network with Merlin}
 
+This talk presents the Merlin network management framework. With Merlin, administrators express network policy using programs in a declarative language based on logical predicates and regular expressions. The Merlin compiler automatically partitions these programs into components that can be placed on a variety of devices.
+It uses a constraint solver to allocate resources such as paths and bandwidth. To ease the administration of federated networks, Merlin provides mechanisms for delegating management of sub-policies to tenants, along with tools for verifying that delegated sub-policies do not violate global constraints. Overall, Merlin greatly simplifies the task of network administration.
+
+
 Merlin:
 A Language for
 Provisioning
@@ -547,6 +455,8 @@ It uses a constraint solver to allocate resources such as paths and bandwidth. T
 \subsection{Managing Dynamic Networks: Distributed or Centralized
   Control}
 
+What if a node or edge of a network fails? What if traffic between two nodes grows or shrinks? Clearly this is a case for distributed algorithms! After all, the Internet and its protocols are decentralized by design. Thanks to redundancy and distributed communications, Paul Baran suggested that the Internet could operate even if many of its links and nodes had been destroyed by a “nuclear attack”. However, it turns out that distributed control leaves quite some efficiency on the table. Recently several companies started to organize their enterprise networks in a centralized fashion, separating data and control planes by means of software-defined networks (SDNs). So we might soon see a world where a (possibly fault-tolerant but nevertheless) centralized controller is making all routing and transport decisions, using SDN-switches to implement these decisions. Is this the death of distributed network algorithms? In my talk I will discuss why this is not necessarily true, that is, why even central control may learn from distributed computing when dealing with network dynamics.
+
 In his somewhat provocative talk, Roger Wattenhofer (ETHZ) considers
 the following question. If we take the extreme case of a network
 managed (e.g., using the SDN approach) by a (fault-tolerant,
@@ -565,34 +475,26 @@ complexity bounds of achieving these criteria in a few different
 network models.
 
 
-\section{Distributed SDN: New? Interesting?}
+\section{Summary and Outlook}
 
-A recently published detailed survey on the
-SDN-related research so far~\cite{sdn-survey}
-claims that ``the myth that logical centralization implied
-a physically centralized controller'' has been addressed and, as a
-result, ``SDN ideas have matured and evolved from
-an academic exercise to a commercial success''.
+The DSDN workshop gathered a good number of participants,
+which
+fluctuated around 20-40 people, depending on the time-of-day.
+For several DSDN participants, it was the first time
+to participate in a PODC event, and they used the opportunity
+to stay throughout the entire conference.
+We are very happy with this outcome, and consider the
+workshop a success.
 
-Given that dealing with networking and computing aspects in the
-same SDN system appears to be novel~\cite{roger-hotnets,stn-tr,stn} and
-the apparent indispensability of \emph{distributed} control in SDN,
-one may expect that this emerging area would bring new and interesting theory.
-However, among 407 articles cited in~\cite{sdn-survey}, we do not find
-a single paper that appeared in a \emph{theoretical} distributed-computing venue
-(such as PODC or DISC).
-We think, based on our personal research experience, this is not
-because SDN does not give rise new and interesting
-research questions related to distributed computing.
-Maybe it is just lack of curiosity or insights on recent
-advances in networking?
-
-The workshop shows that the situation is slowly changing: a few
-research groups are looking at the distributed aspects of SDN now.
-It seems, however, that progress here is still rather modest and
-typically boils down to solving ``conventional'' algorithmic problems,
-using SDN only as a motivating application. We believe nevertheless that
-there are deeper distributed challenges coming directly from SDN.
+Interestingly, among the 400$+$ articles cited in a recent SDN survey~\cite{sdn-survey}, 
+we do not find
+a single paper that appeared in PODC or DISC.
+Accordingly, we hope that the DSDN workshop could
+provide the networking and systems community with a glimpse in to the
+world of PODC. We also hope that the workshop could help to demystify
+SDN, and inspired the PODC community
+to tackle some of the fundamental distributed and
+optimization problems offered by SDN.
 
 
 \bibliographystyle{abbrv}
