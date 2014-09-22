@@ -361,7 +361,7 @@ secret sharing scheme together with SDN, to ensure privacy over multipath networ
 
 Marco Canini (Universit\'{e} catholique de Louvain) presented the concept of software transactional
 networking (STN), a control-plane abstraction used for consistent
-composition of concurrent policies~\cite{stn,tr-stn}. The abstraction assumes a set of
+composition of concurrent policies~\cite{stn}. The abstraction assumes a set of
 control applications that concurrently apply modifications (or
 updates) of the
 \emph{network policy}, i.e., the set of rules that stipulate how the
@@ -394,53 +394,28 @@ motivation behind migrating to SDN.
 
 \subsection{Managing the Network with Merlin}
 
-This talk presents the Merlin network management framework. With Merlin, administrators express network policy using programs in a declarative language based on logical predicates and regular expressions. The Merlin compiler automatically partitions these programs into components that can be placed on a variety of devices.
-It uses a constraint solver to allocate resources such as paths and bandwidth. To ease the administration of federated networks, Merlin provides mechanisms for delegating management of sub-policies to tenants, along with tools for verifying that delegated sub-policies do not violate global constraints. Overall, Merlin greatly simplifies the task of network administration.
-
-
-Merlin:
-A Language for
-Provisioning
-Network Resources
-
-How to Program The Network?
-2
-Existing SDN languages focus mostly
-on packet forwarding
-Ignore other vital network features like
+\emph{How to program the network?} Robert Soul\'{e} follows up on the question raised by Nate Foster
+at the beginning of the workshop, and points out that
+existing SDN languages focus mostly
+on packet forwarding and
+ignore other vital network features like
 bandwidth, packet processing, etc.
-Network orchestration frameworks
-expose extremely simple APIs (if at all)
 
-Merlin Approach
-3
-Specify
-Compile
-Specify global network policy in a
-high-level declarative language.
-Map to a constraint problem.
-Provision network, select paths,
-and decide function placement.
-Generate device-specific code and
-configuration to enforce policy.
-
-
-
-Robert Soule Managing the Network with Merlin
-Abstract: This talk presents the Merlin network management framework. With Merlin, administrators express network policy using programs in a declarative language based on logical predicates and regular expressions. The Merlin compiler automatically partitions these programs into components that can be placed on a variety of devices.
-It uses a constraint solver to allocate resources such as paths and bandwidth. To ease the administration of federated networks, Merlin provides mechanisms for delegating management of sub-policies to tenants, along with tools for verifying that delegated sub-policies do not violate global constraints. Overall, Merlin greatly simplifies the task of network administration.
+He then presented his network management framework Merlin, which later got
+accepted at ACM CoNEXT~\cite{merlin}. Merlin aims to
+simplify the task of network administration: it
+allows administrators to express network policy using programs in a declarative language based on logical predicates and regular expressions.
+Merlin comes with a compiler which automatically partitions programs into components that can be placed, i.e., \emph{embedded}, on a variety of devices.
+It is based on a constraint solver to allocate resources such as paths and bandwidth. 
 
 \subsection{Managing Dynamic Networks: Distributed or Centralized
   Control}
 
-What if a node or edge of a network fails? What if traffic between two nodes grows or shrinks? Clearly this is a case for distributed algorithms! After all, the Internet and its protocols are decentralized by design. Thanks to redundancy and distributed communications, Paul Baran suggested that the Internet could operate even if many of its links and nodes had been destroyed by a “nuclear attack”. However, it turns out that distributed control leaves quite some efficiency on the table. Recently several companies started to organize their enterprise networks in a centralized fashion, separating data and control planes by means of software-defined networks (SDNs). So we might soon see a world where a (possibly fault-tolerant but nevertheless) centralized controller is making all routing and transport decisions, using SDN-switches to implement these decisions. Is this the death of distributed network algorithms? In my talk I will discuss why this is not necessarily true, that is, why even central control may learn from distributed computing when dealing with network dynamics.
-
-In his somewhat provocative talk, Roger Wattenhofer (ETHZ) considers
-the following question. If we take the extreme case of a network
+In his somewhat provocative talk, Roger Wattenhofer (ETH Zurich) considers
+the following question: If we take the extreme case of a network
 managed (e.g., using the SDN approach) by a (fault-tolerant,
 performant, etc.) central controller, would this imply
-that distributed algorithms are no longer needed. The answer (not very
-surprisingly) is no: we still have to deal with the problem of
+that distributed algorithms are no longer needed? The answer is no: we still have to deal with the problem of
 dynamicity and failures on the data plane, as well as the fact that
 the data plane is inherently geographically distributed and cannot be
 manipulated in the atomic manner. In short, we still have to deal with
