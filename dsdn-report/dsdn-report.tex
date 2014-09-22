@@ -260,17 +260,17 @@ place in Paris, France, on the 15th of July, just before
 the 33rd ACM Symposium on Principles of Distributed Computing.
 The workshop intended to be a forum to discuss new algorithmic and
 distributed computing challenges offered by the emerging field of
-Software Defined Networking (SDN).
+Software-Defined Networking (SDN).
 The workshop consisted of invited as well as peer-reviewed presentations, both
 from researchers in the field of
-distributed computing and in the field of networking. 
+distributed computing and in the field of networking.
 \end{abstract}
 
 
 \section{SDN: Networking Is Cool Again!}
 
 Computer networking currently goes through a transition phase,
-and the paradigm of Software-Defined Networking (SDN) 
+and the paradigm of Software-Defined Networking (SDN)
 is discussed intensively, both in the industry and in the academia. In
 a nutshell, the paradigm out-sources and consolidates the control over a network
 to a logically centralized \emph{software control plane}.
@@ -282,13 +282,13 @@ networking is considered cool again.
 
 \section{SDN meets PODC}
 
-At the heart of SDN lies the idea to design and operate 
-the network control logic 
+At the heart of SDN lies the idea to design and operate
+the network control logic
 on a centralized network view.
-However, inevitably, this view is only \emph{logically centralized}~\cite{onix}: 
-in order to avoid a single point of failure and ensure scalability and efficiency,  
+However, inevitably, this view is only \emph{logically centralized}~\cite{onix}:
+in order to avoid a single point of failure and ensure scalability and efficiency,
 the control plane state must
-be physically distributed. 
+be physically distributed.
 
 The design of a distributed control plane is only one example where we feel that the
 PODC community could contribute to relevant networking problems today.
@@ -298,7 +298,7 @@ points between the two communities.
 
 The workshop took
 place in Paris on the sunny day of July 15th, just before
-PODC, concurrently with four other PODC workshops.
+ACM PODC, concurrently with four other PODC workshops.
 
 \section{Program}
 
@@ -309,82 +309,57 @@ workshop. Abstracts and slides can be found at \url{http://www.podc.org/podc2014
 
 \subsection{Foundations of SDN}
 
-The opening keynote was given by Prof Nate Foster (\emph{Cornell University}),
+The opening keynote was given by Nate Foster (\emph{Cornell University}),
 one of the leading figures in SDN and whose research
-is situated at the intersection of programming languages, networks, and security. 
+is situated at the intersection of programming languages, networks, and security.
 
 Nate Foster gave an overview of the motivation for and foundations of SDN, and
-emphasized the importance that programming languages and formal methods 
+emphasized the importance that programming languages and formal methods
 play in software-defined networks: Only by a careful engineering of the right programming abstractions,
 an effective reasoning about network behavior becomes possible. The ability to
-formally reason about an SDN system is important, especially in the light
-of today trend towards public cloud computing, where a network misconfiguration may
+formally reason about an SDN system is crucial, especially in the light
+of today's trend towards public cloud computing, where a network misconfiguration may
 leak confidential information to other tenants.
 
 Nate Foster presented his vision of the Machine, Language, and Runtime Models for SDN.
 In particular, he described the design of a machine-verified SDN controller,
-which is based on a detailed operational OpenFlow model 
-and which is formalized in Coq.~\cite{machine-verified} 
-This operational OpenFlow model can also be used 
+which is based on a detailed operational OpenFlow model
+and which is formalized in Coq.~\cite{machine-verified}
+This operational OpenFlow model can also be used
 to develop a verified compiler and run-time system
-for a more high-level network programming language such as NetKAT.~\cite{netkat} 
+for a more high-level network programming language such as NetKAT.~\cite{netkat}
 
 
 \subsection{Consistent Range Classification with OpenFlow}
 
-Yehuda Afek (TAU) presented his recent work with Anat Bremler-Barr and
-Liron Schiff~\cite{AfekBS14} on consistently classifying ranges 
+Yehuda Afek (Tel Aviv University) presented his recent work with Anat Bremler-Barr and
+Liron Schiff~\cite{AfekBS14} on consistently managing flows and classifying ranges
 in SDN networks with multiple entrance, i.e., in scenarios where the flow changes the entrance point
-to the network. 
-Their range classification scheme only requires three entries per range, 
+to the network.
+Their range classification scheme only requires three entries per range,
 and supports atomic updates across multiple switches. This makes the scheme attractive,
-e.g., in load-balancing and NFV applications. 
-
-We discuss issues in the ranges based flow classification in a dynamic SDN based network. Such issues arise in load-balancing and security based applications in a multi entrance network, where flows may dynamically change their point of entrance. We present a new consistent flow management scheme in an Openflow based SDN network. that addresses these issues. Our first step is a new efficient mutli-range classification scheme which uses only 3 entries per range instead of w per range as in the best existing classifiers, where w is the field size in bits. Building on the ranges classification we show how to update ranges across multiple switches in an atomic manner – allowing to update the set of ranges and their associated actions while packets are classified and the network is changing. Finally, using the two schemes above, we present an architecture suitable for several applications such as load-balancing (which we describe in detail), and NFV, to manage multi-entrance consistency – ensuring that flows are handled by the same policy even when they change the entrance point to the network. Future extensions will be discussed. Joint work with Anat Bremler-Barr and Liron Schiff.
+e.g., in load-balancing and NFV applications.
 
 
 \subsection{SDN-Based Private Interconnection}
 
-Shlomi Dolev1 Shimrit Tzur-David
+Shlomi Dolev presented his joint work with Shimrit Tzur-David. 
+Motivated by the advent of hybrid clouds, clouds augmenting 
+private datacenters with the public clouds, Shlomi Dolev
+presented a new approach for private communication and data transfers
+based on SDN: SDN enables more deterministic, more scalable, more manageable and private virtual
+networks between the local datacenters that reside in the private cloud, to the public resources in the public cloud. 
 
-Cloud computing is one of the fastest growing opportunities for enterprises and service providers. Enterprises use the Infrastructureas-
-a-Service (IaaS) model to build private and public clouds that reduce operating and capital expenses and increase the agility
-and reliability of their critical information systems. In order to fulfil these needs, service providers build public clouds to offer
-on-demand, secure, multi-tenant IT infrastructure to potential costumers that now can use cloud services using a public cloud
-infrastructure.
-The Open Networking Foundation (ONF) report on the infrastructure between datacenters [?] states that fast-changing
-and demanding enterprise and carrier business requirements force changes in network architecture. However, these changes
-were focused on datacenter server and storage virtualization, while the underpinning network architectures have stagnated with
-respect to both scalability and manageability.
-Due to the growth of businesses and the advent of Big Data, the private clouds are augmented with external resources known
-as public clouds. The use of public cloud requires efficient and well performed connectivity between private and public clouds.
-This resulting “hybrid” cloud should provide transfer and sharing of data. Furthermore, this transfer has to be private.
-SDN enables more deterministic, more scalable, more manageable and as we present in this paper, also private virtual
-networks between the local datacenters that reside in the private cloud, to the public resources in the public cloud. These virtual
-networks are called the hybrid cloud.
-In this work we present a private hybrid cloud in which all the information that pass across the cloud is information theoretic
-secured. I.e., unless there is a coalition of several routers in the cloud, the information cannot be revealed. This is done by using
-secret sharing scheme together with SDN to ensure privacy. 
-%Encryption with (n;k) secret sharing scheme (n  k) is done by
-creating n shares from the data such that only by having at least k shares, the data can be decrypted. In the cloud notations,
-assume that the data has to be sent from the private datacenter. The source in the private datacenter creates n shares from the
-data and sends them to the destination at the public cloud through the hybrid cloud. The SDN controller manages the routes of
-these shares such that no router sees k or more shares. This way, we ensure that only the destination at the public cloud that gets
-%all the shares, can decrypt the data, resulting in a private channel in the hybrid cloud. When n > k, we allow n..k shares to get
-lost, due to congestion or even by malicious routers.
-Our Contribution. The contributions of our paper are as follows; To the best of our knowledge, we are the first to use secret
-sharing for a unicast communication over SDN architecture. We show that secret sharing can be very useful to achieve private
-channel when two parties communicate over a multipath network. Whereas many papers have some contribution on the area
-of public cloud security, i.e., securing data in the cloud, to the best of our knowledge, we are the first to target the problem
-of theoretical secured channel to the public cloud. We show that even if there is a probability to the existence of coalition of
-several routers in the hybrid cloud, we can still bound the probability for privacy violation.
-2 Gaining
+In particular, he presented a private hybrid cloud in which all the information that pass across the cloud is information-theoretically
+secured, that is unless there is a coalition of several routers in the cloud, the information cannot be revealed. 
+The main idea of the approach is to use a
+secret sharing scheme together with SDN, to ensure privacy over multipath networks.
 
 
 \subsection{Software Transactional Networking: A Robust and
   Distributed SDN Control Plane}
 
-Marco Canini (UCL) presented the concept of software transactional
+Marco Canini (Universit\'{e} catholique de Louvain) presented the concept of software transactional
 networking (STN), a control-plane abstraction used for consistent
 composition of concurrent policies~\cite{stn,tr-stn}. The abstraction assumes a set of
 control applications that concurrently apply modifications (or
@@ -403,8 +378,11 @@ composition (CPC), and sketched designs of its resilient implementations.
 
 \subsection{Declarative, Distributed Configuration}
 
-Can the challenges motivating the use of SDN be addressed using
-existing hardware and protocols. Sanjai Narain (Applied Communication Sciences) summarized the
+\emph{Can the challenges motivating the use of SDN be addressed using
+existing hardware and protocols?} This question was  asked
+by Sanjai Narain (Applied Communication Sciences) in his presentation.
+He 
+summarized the
 experience collected at his company in using the Assured and Dynamic
 Configuration(ADC) system. In their approach, network functionality is
 expressed as a set of constraints on configuration variables. SAT or
@@ -475,18 +453,9 @@ complexity bounds of achieving these criteria in a few different
 network models.
 
 
-\section{Summary and Outlook}
+\section{Concluding Remarks}
 
-The DSDN workshop gathered a good number of participants,
-which
-fluctuated around 20-40 people, depending on the time-of-day.
-For several DSDN participants, it was the first time
-to participate in a PODC event, and they used the opportunity
-to stay throughout the entire conference.
-We are very happy with this outcome, and consider the
-workshop a success.
-
-Interestingly, among the 400$+$ articles cited in a recent SDN survey~\cite{sdn-survey}, 
+In a recent SDN survey~\cite{sdn-survey}, among the 400$+$ articles cited,
 we do not find
 a single paper that appeared in PODC or DISC.
 Accordingly, we hope that the DSDN workshop could
@@ -495,6 +464,16 @@ world of PODC. We also hope that the workshop could help to demystify
 SDN, and inspired the PODC community
 to tackle some of the fundamental distributed and
 optimization problems offered by SDN.
+
+Overall, the DSDN workshop gathered a good number of participants,
+which
+fluctuated around 20-40 people, depending on the time-of-day.
+For several DSDN participants, it was the first time
+to participate in a PODC event, and they used the opportunity
+to stay throughout the entire conference.
+
+We are very happy with the outcomes of the DSDN workshop, and consider it
+a success.
 
 
 \bibliographystyle{abbrv}
