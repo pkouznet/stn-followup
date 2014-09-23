@@ -7,6 +7,8 @@
 %\usepackage[noend]{algorithmic}
 \usepackage[lined,boxed,commentsnumbered]{algorithm2e}
 
+%[[For jpeg images]]
+%\usepackage{pgf}
 
 \usepackage{amssymb}
 \usepackage{comment}
@@ -261,7 +263,7 @@ the 33rd ACM Symposium on Principles of Distributed Computing.
 The workshop intended to be a forum to discuss new algorithmic and
 distributed computing challenges offered by the emerging field of
 Software-Defined Networking (SDN).
-The workshop consisted of invited as well as peer-reviewed presentations, both
+The workshop consisted of invited and peer-reviewed presentations, both
 from researchers in the field of
 distributed computing and in the field of networking.
 \end{abstract}
@@ -275,8 +277,8 @@ is discussed intensively, both in the industry and in the academia. In
 a nutshell, the paradigm out-sources and consolidates the control over a network
 to a logically centralized \emph{software control plane}.
 This separation, and the introduction of ``programmability'',
-allows to adapt and innovate the network control plane more quickly
-and independently of the data plane.
+allows to adapt and innovate the network control plane in a more
+efficient way and independently of the data plane.
 The resulting flexibilities open interesting new opportunities:
 networking is considered cool again.
 
@@ -344,22 +346,23 @@ e.g., in load-balancing and NFV applications.
 \subsection{SDN-Based Private Interconnection}
 
 Shlomi Dolev presented his joint work with Shimrit Tzur-David. 
-Motivated by the advent of hybrid clouds, clouds augmenting 
+Motivated by the advent of \emph{hybrid clouds}, clouds augmenting 
 private datacenters with the public clouds, Shlomi Dolev
 presented a new approach for private communication and data transfers
-based on SDN: SDN enables more deterministic, more scalable, more manageable and private virtual
+leveraged by SDN. The work assumes that SDN can enable deterministic and manageable private virtual
 networks between the local datacenters that reside in the private cloud, to the public resources in the public cloud. 
 
-In particular, he presented a private hybrid cloud in which all the information that pass across the cloud is information-theoretically
-secured, that is unless there is a coalition of several routers in the cloud, the information cannot be revealed. 
+In particular, Shlomi presented a private hybrid cloud in which all the information that passes across the cloud is information-theoretically
+secure, i.e., unless there is a sufficiently large coalition of malicious routers, the information cannot be revealed. 
 The main idea of the approach is to use a
-secret sharing scheme together with SDN, to ensure privacy over multipath networks.
+secret sharing scheme together with SDN, to ensure privacy over
+multipath communication.
 
 
 \subsection{Software Transactional Networking: A Robust and
   Distributed SDN Control Plane}
 
-Marco Canini (Universit\'{e} catholique de Louvain) presented the concept of software transactional
+Marco Canini (Universit\'{e} Catholique de Louvain) presented the concept of software transactional
 networking (STN), a control-plane abstraction used for consistent
 composition of concurrent policies~\cite{stn}. The abstraction assumes a set of
 control applications that concurrently apply modifications (or
@@ -374,7 +377,8 @@ here we have to make sure that some kinds of transactions, namely
 \emph{data-plane traffic} traces have to be processed in a manner that
 is transparent to network-configuration changes.
 The talk hinted on the formal definition of the abstraction of consistent policy
-composition (CPC), and sketched designs of its resilient implementations.
+composition (CPC), and sketched designs of its implementations that
+are resilient to asynchrony and failures in the control plane.
 
 \subsection{Declarative, Distributed Configuration}
 
@@ -428,28 +432,48 @@ complexity bounds of achieving these criteria in a few different
 network models.
 
 
-\section{Concluding Remarks}
+\section{Concluding Remarks: Distributed SDN? New and Interesting!}
 
 In a recent SDN survey~\cite{sdn-survey}, among the 400$+$ articles cited,
 we do not find
 a single paper that appeared in PODC or DISC.
-Accordingly, we hope that the DSDN workshop could
-provide the networking and systems community with a glimpse in to the
-world of PODC. We also hope that the workshop could help to demystify
-SDN, and inspired the PODC community
-to tackle some of the fundamental distributed and
-optimization problems offered by SDN.
+We think, based on our personal research experience, this is not
+because SDN does not give rise new and interesting
+research questions related to distributed computing.
+Maybe it is just lack of curiosity or insights on recent
+advances in networking?
 
-Overall, the DSDN workshop gathered a good number of participants,
-which
-fluctuated around 20-40 people, depending on the time-of-day.
+We hope that the DSDN workshop could
+provide the networking and systems community with a glimpse into the
+world of PODC. We also hope that the workshop could help to demystify
+SDN, and inspire the PODC community
+to tackle some of the fundamental distributed and
+optimization problems offered by SDN. 
+Indeed, the workshop shows that the situation is slowly changing: a few
+research groups are looking at the distributed aspects of SDN now.
+It seems, however, that progress here is still rather modest and
+typically boils down to solving ``conventional'' algorithmic problems,
+using SDN only as a motivating application. We believe nevertheless that
+there are deeper distributed and optimization challenges coming directly from SDN.
+
+The good sign here is that the DSDN workshop gathered a good number of participants,
+fluctuated around 25-40 people, depending on the time-of-day, facing
+a strong competition with 4 concurrent workshops.
 For several DSDN participants, it was the first time
 to participate in a PODC event, and they used the opportunity
 to stay throughout the entire conference.
 
-We are very happy with the outcomes of the DSDN workshop, and consider it
+Overall, we are very happy with the outcomes of the DSDN workshop, and consider it
 a success.
 
+
+%\begin{figure}[h]
+\begin{center}
+\includegraphics[width=3.5in]{dinner.jpg}
+\end{center}
+%\caption{The ``DSDN dinner''}
+%\label{fig:Reinforcement}
+%\end{figure}
 
 \bibliographystyle{abbrv}
 \bibliography{references}  % main.bib is the name of the Bibliography in this case
