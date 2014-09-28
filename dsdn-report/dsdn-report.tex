@@ -277,17 +277,17 @@ is discussed intensively, both in the industry and in the academia. In
 a nutshell, the paradigm out-sources and consolidates the control over a network
 to a logically centralized \emph{software control plane}.
 This separation, and the introduction of ``programmability'',
-allows to adapt and innovate the network control plane in a more
-efficient way and independently of the data plane.
-The resulting flexibilities open interesting new opportunities:
-networking is considered cool again.
+allows to adapt and innovate the network control plane more
+efficiently, and independently of the data plane.
+The resulting flexibilities open interesting new opportunities. Or, as the Cisco CTO recently put it:
+\emph{networking is cool again!}
 
 \section{SDN meets PODC}
 
 At the heart of SDN lies the idea to design and operate
 the network control logic
 on a centralized network view.
-However, inevitably, this view is only \emph{logically centralized}~\cite{onix}:
+However, inevitably, this view is only \emph{logically centralized}~\cite{onix,kandoo,hotsdn13loc,log-cent}:
 in order to avoid a single point of failure and ensure scalability and efficiency,
 the control plane state must
 be physically distributed.
@@ -315,7 +315,7 @@ The opening keynote was given by Nate Foster (\emph{Cornell University}),
 one of the leading figures in SDN and whose research
 is situated at the intersection of programming languages, networks, and security.
 
-Nate Foster gave an overview of the motivation for and foundations of SDN, and
+Nate gave an overview of the motivation for and foundations of SDN, and
 emphasized the importance that programming languages and formal methods
 play in software-defined networks: Only by a careful engineering of the right programming abstractions,
 an effective reasoning about network behavior becomes possible. The ability to
@@ -323,7 +323,7 @@ formally reason about an SDN system is crucial, especially in the light
 of today's trend towards public cloud computing, where a network misconfiguration may
 leak confidential information to other tenants.
 
-Nate Foster presented his vision of the Machine, Language, and Runtime Models for SDN.
+Nate presented his vision of the machine, language, and runtime models for SDN.
 In particular, he described the design of a machine-verified SDN controller,
 which is based on a detailed operational OpenFlow model
 and which is formalized in Coq.~\cite{machine-verified}
@@ -345,15 +345,15 @@ e.g., in load-balancing and NFV applications.
 
 \subsection{SDN-Based Private Interconnection}
 
-Shlomi Dolev presented his joint work with Shimrit Tzur-David. 
-Motivated by the advent of \emph{hybrid clouds}, clouds augmenting 
+Shlomi Dolev presented his joint work with Shimrit Tzur-David.
+Motivated by the advent of \emph{hybrid clouds}, clouds augmenting
 private datacenters with the public clouds, Shlomi Dolev
 presented a new approach for private communication and data transfers
 leveraged by SDN. The work assumes that SDN can enable deterministic and manageable private virtual
-networks between the local datacenters that reside in the private cloud, to the public resources in the public cloud. 
+networks between the local datacenters that reside in the private cloud, to the public resources in the public cloud.
 
 In particular, Shlomi presented a private hybrid cloud in which all the information that passes across the cloud is information-theoretically
-secure, i.e., unless there is a sufficiently large coalition of malicious routers, the information cannot be revealed. 
+secure, i.e., unless there is a sufficiently large coalition of malicious routers, the information cannot be revealed.
 The main idea of the approach is to use a
 secret sharing scheme together with SDN, to ensure privacy over
 multipath communication.
@@ -385,7 +385,7 @@ are resilient to asynchrony and failures in the control plane.
 \emph{Can the challenges motivating the use of SDN be addressed using
 existing hardware and protocols?} This question was  asked
 by Sanjai Narain (Applied Communication Sciences) in his presentation.
-He 
+He
 summarized the
 experience collected at his company in using the Assured and Dynamic
 Configuration(ADC) system. In their approach, network functionality is
@@ -410,7 +410,7 @@ accepted at ACM CoNEXT~\cite{merlin}. Merlin aims to
 simplify the task of network administration: it
 allows administrators to express network policy using programs in a declarative language based on logical predicates and regular expressions.
 Merlin comes with a compiler which automatically partitions programs into components that can be placed, i.e., \emph{embedded}, on a variety of devices.
-It is based on a constraint solver to allocate resources such as paths and bandwidth. 
+It is based on a constraint solver to allocate resources such as paths and bandwidth.
 
 \subsection{Managing Dynamic Networks: Distributed or Centralized
   Control}
@@ -427,7 +427,7 @@ manipulated in the atomic manner. In short, we still have to deal with
 distributed computing which is essentially all about consistency.
 In his talk, Roger overviewed several natural network consistency
 criteria (such as \emph{loop-freedom} or \emph{per-packet
-  consistency}) and sketched several impossibility results and
+  consistency}, see~\cite{roger-hotnets}) and sketched several impossibility results and
 complexity bounds of achieving these criteria in a few different
 network models.
 
@@ -448,7 +448,7 @@ provide the networking and systems community with a glimpse into the
 world of PODC. We also hope that the workshop could help to demystify
 SDN, and inspire the PODC community
 to tackle some of the fundamental distributed and
-optimization problems offered by SDN. 
+optimization problems offered by SDN.
 Indeed, the workshop shows that the situation is slowly changing: a few
 research groups are looking at the distributed aspects of SDN now.
 It seems, however, that progress here is still rather modest and
