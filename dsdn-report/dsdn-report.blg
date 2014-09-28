@@ -1,8 +1,46 @@
-This is BibTeX, Version 0.99cThe top-level auxiliary file: dsdn-report.aux
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dsdn-report.aux
 The style file: abbrv.bst
 Database file #1: references.bib
-Repeated entry---line 225 of file references.bib
- : @inproceedings{roger-hotnets
- :                             ,
-I'm skipping whatever remains of this entry
-(There was 1 error message)
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            744 strings with 9153 characters,
+and the built_in function-call counts, 4053 in all, are:
+= -- 338
+> -- 293
+< -- 1
++ -- 115
+- -- 104
+* -- 281
+:= -- 703
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 86
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 153
+empty$ -- 298
+format.name$ -- 104
+if$ -- 823
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 10
+newline$ -- 59
+num.names$ -- 22
+pop$ -- 119
+preamble$ -- 2
+purify$ -- 74
+quote$ -- 0
+skip$ -- 89
+stack$ -- 0
+substring$ -- 87
+swap$ -- 28
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 0
+while$ -- 25
+width$ -- 13
+write$ -- 115
