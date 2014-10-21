@@ -1,0 +1,96 @@
+\relax 
+\citation{Ferguson2013}
+\citation{netkat}
+\citation{network-update}
+\citation{network-update}
+\citation{stm-st95}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{stm-st95}
+\citation{Her91}
+\citation{FLP85}
+\citation{Her91}
+\citation{DDS87}
+\citation{CHT96}
+\citation{DFG10}
+\citation{network-update}
+\citation{network-update}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Distributed Control Plane Model}{2}}
+\newlabel{sec:model}{{2}{2}}
+\citation{network-update}
+\newlabel{fig:example1}{{1(a)}{5}}
+\newlabel{sub@fig:example1}{{(a)}{5}}
+\newlabel{fig:example2}{{1(b)}{5}}
+\newlabel{sub@fig:example2}{{(b)}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example of a policy composition with a $3$-controller control plane and $3$-switch data plane (a). The three controllers try to concurrently install three different policies $\pi _1$, $\pi _2$, and $\pi _3$. We suppose that $\pi _3$ is conflicting with both $\pi _1$ and $\pi _2$, so $\pi _3$ is aborted (b). Circles represent data-plane events (an \emph  {inject} event followed by a sequence of forward events). Next to $H$ we depict its ``sequential equivalent'' $H_S$. In the sequential history, no two requests are applied concurrently and no request is rejected. \leavevmode {\color  {heraldBlue}\relax \fontsize  {10}{12}\selectfont  \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \bf  [MC: Things to note about the example: (1) apply($\pi _1$) is shown below $p_1$, might suggest that the request is sent to the switch 1. (2) $H$ and $H_S$ are not identified in the figure. (3) The caption says no request is rejected but $\pi _3$ is still aborted. (4) in $H_S$, why do the second and third sequence of data plane event occur after $\pi _1$ is acked?]} }}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{5}}
+\newlabel{fig:examples}{{1}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The CPC Problem}{5}}
+\newlabel{sec:problem}{{3}{5}}
+\newlabel{def:history}{{1}{6}}
+\newlabel{def:CPC}{{2}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}CPC Solutions and Complexity Bounds}{6}}
+\newlabel{sec:solution}{{4}{6}}
+\citation{Her91}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}$\textsc  {FixTag}$: Per-Policy Tags}{7}}
+\newlabel{ssec:path-algo}{{4.1}{7}}
+\newlabel{thm:tags}{{3}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}$\textsc  {ReuseTag}$: Optimal Tag Complexity}{7}}
+\citation{HW90}
+\newlabel{line:push}{{2}{8}}
+\newlabel{line:pull}{{3}{8}}
+\newlabel{line:checkconflict}{{4}{8}}
+\newlabel{line:wait3}{{8}{8}}
+\newlabel{line:install}{{9}{8}}
+\newlabel{line:result}{{11}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The $\textsc  {ReuseTag}$ algorithm: pseudocode for controller $p_i$.}}{8}}
+\newlabel{fig:lin}{{2}{8}}
+\citation{network-update}
+\citation{Pap79-serial,Lam79,HW90}
+\citation{HW90}
+\newlabel{thm:lin}{{4}{9}}
+\newlabel{th:tagbound}{{5}{9}}
+\citation{stm-st95}
+\citation{dstm}
+\citation{fabric}
+\citation{onix}
+\citation{network-update}
+\citation{roger-hotnets}
+\citation{hotsdn13ccc}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Related Work}{10}}
+\newlabel{sec:related}{{5}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Concluding Remarks}{10}}
+\newlabel{sec:conc}{{6}{10}}
+\citation{GME-00}
+\citation{ons13stn}
+\bibstyle{abbrv}
+\bibdata{references}
+\bibcite{netkat}{1}
+\bibcite{ons13stn}{2}
+\bibcite{hotsdn13ccc}{3}
+\bibcite{fabric}{4}
+\bibcite{CHT96}{5}
+\bibcite{DFG10}{6}
+\bibcite{DDS87}{7}
+\bibcite{Ferguson2013}{8}
+\bibcite{FLP85}{9}
+\bibcite{Her91}{10}
+\bibcite{dstm}{11}
+\bibcite{HW90}{12}
+\bibcite{GME-00}{13}
+\bibcite{onix}{14}
+\bibcite{Lam79}{15}
+\bibcite{roger-hotnets}{16}
+\bibcite{Pap79-serial}{17}
+\bibcite{network-update}{18}
+\bibcite{stm-st95}{19}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Impossibility for Weaker Port Model}{12}}
+\newlabel{sec:weaker-port}{{A}{12}}
+\newlabel{thm:impossible}{{6}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Proofs}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Proof Sketch of Theorem\nobreakspace  {}3\hbox {}}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Proof of Theorem\nobreakspace  {}4\hbox {}}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}Proof of Theorem\nobreakspace  {}5\hbox {}}{14}}
+\newlabel{app:proof:dpo}{{B.3}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The $(f+1)$-loop network topology $T_f$.}}{15}}
+\newlabel{fig:tagbound}{{3}{15}}

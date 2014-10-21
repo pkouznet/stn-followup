@@ -1,4 +1,4 @@
-OUT = cpc
+OUT = sdnsync
 IN = bib
 all: $(OUT).pdf
 

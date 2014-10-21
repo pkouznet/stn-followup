@@ -1,0 +1,108 @@
+\def\noopsort#1{} \def\No{\kern-.25em\lower.2ex\hbox{\char'27}}
+  \def\no#1{\relax} \def\http#1{{\\{\small\tt
+  http://www-litp.ibp.fr:80/{$\sim$}#1}}}
+\begin{thebibliography}{10}
+
+\bibitem{netkat}
+C.~J. Anderson, N.~Foster, A.~Guha, J.-B. Jeannin, D.~Kozen, C.~Schlesinger,
+  and D.~Walker.
+\newblock {NetKAT: Semantic Foundations for Networks}.
+\newblock In {\em POPL}, 2014.
+
+\bibitem{ons13stn}
+M.~Canini, D.~D. Cicco, P.~Kuznetsov, D.~Levin, S.~Schmid, and S.~Vissicchio.
+\newblock {STN: A Robust and Distributed SDN Control Plane}.
+\newblock In {\em To appear in Open Networking Summit (ONS)}, March 2014.
+
+\bibitem{hotsdn13ccc}
+M.~Canini, P.~Kuznetsov, D.~Levin, and S.~Schmid.
+\newblock Software transactional networking: Concurrent and consistent policy
+  composition.
+\newblock In {\em ACM SIGCOMM HotSDN}, August 2013.
+
+\bibitem{fabric}
+M.~Casado, T.~Koponen, S.~Shenker, and A.~Tootoonchian.
+\newblock Fabric: A retrospective on evolving sdn.
+\newblock In {\em Proc. Workshop on Hot Topics in Software Defined Networks
+  (HotSDN)}, 2012.
+
+\bibitem{CHT96}
+T.~D. Chandra, V.~Hadzilacos, and S.~Toueg.
+\newblock The weakest failure detector for solving consensus.
+\newblock {\em J.~ACM}, 43(4):685--722, July 1996.
+
+\bibitem{DFG10}
+C.~Delporte-Gallet, H.~Fauconnier, and R.~Guerraoui.
+\newblock Tight failure detection bounds on atomic object implementations.
+\newblock {\em J. ACM}, 57(4), 2010.
+
+\bibitem{DDS87}
+D.~Dolev, C.~Dwork, and L.~Stockmeyer.
+\newblock On the minimal synchronism needed for distributed consensus.
+\newblock {\em J.~ACM}, 34(1):77--97, Jan. 1987.
+
+\bibitem{Ferguson2013}
+A.~D. Ferguson, A.~Guha, C.~Liang, R.~Fonseca, and S.~Krishnamurthy.
+\newblock {Participatory Networking: An API for Application Control of SDNs}.
+\newblock In {\em ACM SIGCOMM}, 2013.
+
+\bibitem{FLP85}
+M.~J. Fischer, N.~A. Lynch, and M.~S. Paterson.
+\newblock Impossibility of distributed consensus with one faulty process.
+\newblock {\em J.~ACM}, 32(2):374--382, Apr. 1985.
+
+\bibitem{Her91}
+M.~Herlihy.
+\newblock Wait-free synchronization.
+\newblock {\em ACM Trans. Prog. Lang. Syst.}, 13(1):123--149, Jan. 1991.
+
+\bibitem{dstm}
+M.~Herlihy, V.~Luchangco, M.~Moir, and W.~N. Scherer.
+\newblock Software transactional memory for dynamic-sized data structures.
+\newblock In {\em Proc. 22nd Annual Symposium on Principles of Distributed
+  Computing (PODC)}, pages 92--101, 2003.
+
+\bibitem{HW90}
+M.~Herlihy and J.~M. Wing.
+\newblock Linearizability: A correctness condition for concurrent objects.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 12(3):463--492, 1990.
+
+\bibitem{GME-00}
+Y.-J. Joung.
+\newblock Asynchronous group mutual exclusion.
+\newblock {\em Distributed Computing}, 13(4):189--206, 2000.
+
+\bibitem{onix}
+T.~Koponen, M.~Casado, N.~Gude, J.~Stribling, L.~Poutievski, M.~Zhu,
+  R.~Ramanathan, Y.~Iwata, H.~Inoue, T.~Hama, and S.~Shenker.
+\newblock {Onix: A Distributed Control Platform for Large-scale Production
+  Networks}.
+\newblock In {\em OSDI}, 2010.
+
+\bibitem{Lam79}
+L.~Lamport.
+\newblock How to make a multiprocessor computer that correctly executes
+  multiprocess programs.
+\newblock {\em IEEE Trans. Comput.}, C-28(9):690--691, Sept. 1979.
+
+\bibitem{roger-hotnets}
+R.~Mahajan and R.~Wattenhofer.
+\newblock {On Consistent Updates in Software Defined Networks}.
+\newblock In {\em Proc. HotNets}, 2013.
+
+\bibitem{Pap79-serial}
+C.~H. Papadimitriou.
+\newblock The serializability of concurrent database updates.
+\newblock {\em J. ACM}, 26:631--653, October 1979.
+
+\bibitem{network-update}
+M.~Reitblatt, N.~Foster, J.~Rexford, C.~Schlesinger, and D.~Walker.
+\newblock Abstractions for network update.
+\newblock In {\em SIGCOMM}, 2012.
+
+\bibitem{stm-st95}
+N.~Shavit and D.~Touitou.
+\newblock Software transactional memory.
+\newblock {\em Distributed Computing}, 1997.
+
+\end{thebibliography}
